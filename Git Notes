@@ -1,0 +1,76 @@
+Commit:
+-Saved changes to git repository
+-Impacts history
+-SHA1 hash for unique identifier
+
+Branches:
+-Timeline with commits
+
+Head:
+-Pointer to last commit on branch
+
+You can start git in two ways:
+1- local 2- remote
+
+to start local, one have to initialize current working directory using "git init"
+to start remote, set up a git repository on remote, then use "git clone" to create a new repository on our local system
+
+Working Directory - git init -> work
+Staging Area - git add (git track the files in staging area/index area)
+Git Repository - git commit
+Remote(Github/Gitlab/BitBucket)
+
+push - Move changes from git repository to remote
+pull - Move changes from remote to Working Directory
+
+to download git in windows:
+- Go to "git-for-windows.github.io"
+- Download the installer as per your OS configuration
+
+Basic git commands:
+
+To grow, mark and tweak your common history
+branch                  List, create, or delete branches
+commit                  Record changes to the repository
+merge                   Join two or more development histories together
+rebase                  Reapply commits on top of another base tip
+reset                   Reset current HEAD to the specified state
+switch                  Switch branches
+tag                     Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+fetch                   Download objects and refs from another repository
+pull                    Fetch from and integrate with another repository or a local branch
+push                    Update remote refs along with associated objects
+
+To backout changes
+restore --staged <file> To unstage (To move file back from staging area to working directory)
+restore <file>          To discard changes in working directory
+
+rm <file>
+commit                  To remove file from git repository (Use both of these)
+
+mv <file> <path>        To move file to another place
+commit                  To commit latest file to git repository
+
+Others
+status                  Shows which files have been modified in the working directory vs Git's staging area
+log                     To see commits in git repository
+log --oneline --graph   To see commits in short in git repository
+help <command name>     To find out command working
+
+.gitignore              Add file regex expression in .gitignore file if you don't want to commit them to git repository
+commits                 To add updated .gitignore to git repository
+
+To store and list git credentials
+git config --global user.name "paras maheshwari"
+git config --global user.email "paras.maheshwari@gmail.com"
+git config --global --list
+
+To generate and connect gitHub using ssh key:
+cd ~
+mkdir .ssh
+cd .ssh
+ssh-keygen -t rsa -C "email"  (Use your actual email address in the example)
+In github - Go to settings - SSH and GPG keys - copy and paste id_rsa.pub key
+ssh -T git@github.com (This command uses ssh to connect to GitHub over the SSH protocol)
